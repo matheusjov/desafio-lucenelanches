@@ -1,0 +1,65 @@
+body {
+  background-color: #fafafa;
+}
+a {
+  color: white;
+}
+a:hover, a:focus {
+  color: #F5D04C;
+}
+h4 {
+  display: inline;
+}
+/*custom navbar*/
+.obrigatorio{
+  font-size: 12px;
+  color: rgb(221,44,0);
+  padding-top: 5px;
+}
+.navbar {
+  background-color: #931009;
+}
+.navbar .navbar-toggle {
+  border-color: white;
+}
+.navbar-toggle .icon-bar {
+  background-color: white;
+}
+.navbar ul {
+  margin: 10px;
+}
+/*end custom nav*/
+.translate img {
+  width: 35px;
+  margin-top: -3px;
+  margin-bottom: -2px;
+}
+.imgsnack {
+  padding: 5px 5px 15px 5px;
+}
+.form-horizontal .control-label {
+  text-align: left;
+}
+.check-left {
+  margin-left: 30px;
+}
+.checkbox label, .radio label {
+  padding-left: 0;
+}
+.btn-block {
+  margin-top: 5px;
+  border-radius: 20px;
+}
+.text-value {
+  font-size: 20px;
+}
+/*modal*/
+.modal-magin-top {
+  margin-top: 15px;
+}
+.modal-inputs {
+  margin-left: -29px;
+}
+.modal-label-left {
+  margin-left: 159px;
+}
