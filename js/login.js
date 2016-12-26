@@ -1,5 +1,5 @@
 $( document ).ready(function() {
   $('#login').click(function() {
-    window.location.href = 'solicitation-snack.html';
-  })
+    window.location.href = 'view/solicitation-snack.html';
+  });
 });
