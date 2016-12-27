@@ -253,15 +253,15 @@ $( document ).ready(function() {
       $('#lb-valor-porcento').show();
       var count = 1;
       for (var i = 0; i < this.value; i++) {
-        $('#lista-pessoas').append('<div class="row">\
-        <div class="form-group col-md-3">\
+        $('#lista-pessoas').append('<div class="row col-md-12">\
+        <div class="form-group col-md-4">\
         <label class="modal-label lang" key="pessoa">Pessoa</label><br><p>'+count+'</p>\
         </div>\
         <div class="form-group col-md-4">\
-        <input type="text" class="form-control" data-count="'+count+'" placeholder="R$ 0,00" id="valor-pedido_'+count+'" name="valor-pedido">\
+        <input type="text" class="form-control" onkeyup="somenteNumeros(this);" data-count="'+count+'" placeholder="R$ 0,00" id="valor-pedido_'+count+'" name="valor-pedido">\
         </div>\
         <div class="form-group col-md-4">\
-        <input type="number" class="form-control" data-count="'+count+'" id="porcentagem-pedido_'+count+'" name="porcentagem-pedido">\
+        <input type="text" class="form-control" onkeyup="somenteNumeros(this);" maxlength="3" data-count="'+count+'" id="porcentagem-pedido_'+count+'" name="porcentagem-pedido">\
         </div>\
         </div>');
         count++;
@@ -281,6 +281,15 @@ $( document ).ready(function() {
   });
 
 });
+
+function somenteNumeros(num) {
+  var er = /[^0-9.]/;
+  er.lastIndex = 0;
+  var campo = num;
+  if (er.test(campo.value)) {
+    campo.value = "";
+  }
+}
 
 var ordem = 1;
 function adicinaLanche(){
@@ -429,10 +438,10 @@ function translate(lang){
   arrLang['pt']['dinheiro'] = 'Dinheiro';
   arrLang['pt']['sim'] = 'Sim';
   arrLang['pt']['nao'] = 'Não';
-  arrLang['pt']['valor'] = 'O valor total do seu pedido é de';
+  arrLang['pt']['valor'] = 'O valor total do seu pedido é de ';
   arrLang['pt']['troco'] = 'Precisa de troco?';
   arrLang['pt']['formaPagamento'] = 'Qual a forma de pagamento?';
-  arrLang['pt']['ola'] = 'Olá';
+  arrLang['pt']['ola'] = 'Olá ';
   arrLang['pt']['seupedido'] = 'Seu pedido já está em andamento';
   arrLang['pt']['calculadora'] = 'Use nossa calculadora caso queira dividir o valor';
   arrLang['pt']['valorPedido'] = 'Valor do pedido';
@@ -444,6 +453,7 @@ function translate(lang){
   arrLang['pt']['finalizar'] = 'Finalizar';
   arrLang['pt']['obrigatorio'] = 'Este campo é obrigatório.';
   arrLang['pt']['um-lanche'] = 'Ao menos um lanche deve ser selecionado para o pedido.';
+  arrLang['en']['solicitacao'] = 'Solicitação de Lanche';
   // strings ingles
   arrLang['en']['nome'] = 'Name';
   arrLang['en']['endereco'] = 'Address';
@@ -490,6 +500,7 @@ function translate(lang){
   arrLang['en']['finalizar'] = 'Finish';
   arrLang['en']['obrigatorio'] = 'This fields is required.';
   arrLang['en']['um-lanche'] = 'At least one snack must be selected for the order.';
+  arrLang['en']['solicitacao'] = 'Snack Request';
 
   $('.lang-placeholder').each(function(index, element) {
     $(this).attr("placeholder", arrLang[lang][$(this).attr('key')])
