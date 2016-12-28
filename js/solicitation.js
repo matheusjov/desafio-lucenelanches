@@ -18,6 +18,7 @@ $( document ).ready(function() {
   $('.obrigatorio').hide();
   $('#um-lanche').hide();
   $('#lb-valor-porcento').hide();
+  $('.paraquanto').hide();
   $(".bg_load").fadeOut("slow");
   $(".wrapper").fadeOut("slow");
   $("input[type=checkbox][name='dobrar-saladas']").attr('disabled', true);
@@ -226,6 +227,14 @@ $( document ).ready(function() {
         valorItens -= val;
         $("#lb-valorPedido").text(formataValor(valorItens));
       }
+    }
+  });
+
+  $("input[type=radio][name^='troco']").click(function(){
+    if(this.value == 'S'){
+      $('.paraquanto').show();
+    }else{
+      $('.paraquanto').hide();
     }
   });
 
@@ -481,6 +490,7 @@ function translate(lang){
   arrLang['pt']['obrigatorio'] = 'Este campo é obrigatório.';
   arrLang['pt']['um-lanche'] = 'Ao menos um lanche deve ser selecionado para o pedido.';
   arrLang['pt']['solicitacao'] = 'Solicitação de Lanche';
+  arrLang['pt']['paraquanto'] = 'Para quanto?';
   // strings ingles
   arrLang['en']['nome'] = 'Name';
   arrLang['en']['endereco'] = 'Address';
@@ -528,6 +538,7 @@ function translate(lang){
   arrLang['en']['obrigatorio'] = 'This fields is required.';
   arrLang['en']['um-lanche'] = 'At least one snack must be selected for the order.';
   arrLang['en']['solicitacao'] = 'Snack Request';
+  arrLang['en']['paraquanto'] = 'For how much?';
 
   $('.lang-placeholder').each(function(index, element) {
     $(this).attr("placeholder", arrLang[lang][$(this).attr('key')])
