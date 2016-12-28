@@ -13,12 +13,14 @@ $( document ).ready(function() {
   var aux = 0;
   var aux2 = 0;
   var auxLancheText;
+  var auxDobrar = 0;
 
   $('.obrigatorio').hide();
   $('#um-lanche').hide();
   $('#lb-valor-porcento').hide();
   $(".bg_load").fadeOut("slow");
   $(".wrapper").fadeOut("slow");
+  $("input[type=checkbox][name='dobrar-saladas']").attr('disabled', true);
 
   $.ajax({
     type: "GET",
@@ -165,6 +167,12 @@ $( document ).ready(function() {
   });
 
   $("input[type=radio][name^='salada']").click(function(){
+    $("input[type=checkbox][name='dobrar-saladas']").prop('checked', false );
+    $("input[type=checkbox][name='dobrar-saladas']").attr('disabled', false);
+    if (auxDobrar) {
+      valorItens -= auxDobrar;
+      auxDobrar = 0;
+    }
     if (auxSaladaText) {
       if (auxSaladaText != this.value) {
         if($(this).is(":checked")){
@@ -201,6 +209,23 @@ $( document ).ready(function() {
     }else{
       valorItens -= Number($(this).data('valor'));
       $("#lb-valorPedido").text(formataValor(valorItens));
+    }
+  });
+
+  $("input[type=checkbox][name='dobrar-saladas']").click(function(){
+    if($(this).is(":checked")){
+      if($("input[type=radio][name^='salada']").is(":checked") == true){
+        var val = $('input[name=salada]:checked').data('valor');
+        auxDobrar = val;
+        valorItens += val;
+        $("#lb-valorPedido").text(formataValor(valorItens));
+      }
+    }else{
+      if($("input[type=radio][name^='salada']").is(":checked") == true){
+        var val = $('input[name=salada]:checked').data('valor');
+        valorItens -= val;
+        $("#lb-valorPedido").text(formataValor(valorItens));
+      }
     }
   });
 
@@ -455,7 +480,7 @@ function translate(lang){
   arrLang['pt']['finalizar'] = 'Finalizar';
   arrLang['pt']['obrigatorio'] = 'Este campo é obrigatório.';
   arrLang['pt']['um-lanche'] = 'Ao menos um lanche deve ser selecionado para o pedido.';
-  arrLang['en']['solicitacao'] = 'Solicitação de Lanche';
+  arrLang['pt']['solicitacao'] = 'Solicitação de Lanche';
   // strings ingles
   arrLang['en']['nome'] = 'Name';
   arrLang['en']['endereco'] = 'Address';
