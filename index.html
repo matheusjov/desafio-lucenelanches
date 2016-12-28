@@ -17,13 +17,18 @@
   <title>LuceneLanches</title>
 </head>
 <body>
-  
+
   <div class="wrapper">
     <form class="form-signin">
-      <h2 class="form-signin-heading text-center">Lucene Lanches</h2><br>
+      <h2 class="form-signin-heading">Login</h2><br>
       <input type="text" class="form-control" name="username" placeholder="Email" required="" autofocus="" /><br>
-      <input type="password" class="form-control" name="password" placeholder="Senha" required=""/><br>
-      <button class="btn btn-lg btn-primary btn-block" type="submit" id="login">Login</button>
+      <div class="form-group">
+        <div class="input-group">
+          <input type="password" class="form-control" id="uPassword" placeholder="Password">
+          <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+        </div> <!-- /.input-group -->
+      </div>
+      <button class="btn btn-lg btn-danger btn-block" type="submit" id="login">Entrar</button>
     </form>
   </div>
 

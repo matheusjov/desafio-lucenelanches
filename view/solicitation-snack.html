@@ -104,7 +104,7 @@
           <div class="row col-md-6 col-sm-4 col-lg-4">
             <div class="row">
               <label class="col-md-5 control-label lang" key="salada">Salada</label>
-              <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-saladas"/> 2x </span>
+              <!-- <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-saladas"/> 2x </span> -->
             </div>
             <div class="obrigatorio obg-salada lang" key="obrigatorio">
               Este campo é obrigatório.
@@ -119,7 +119,7 @@
           <div class="row col-md-6 col-sm-4 col-lg-4">
             <div class="row">
               <label class="col-md-5 control-label lang" key="molhos">Molhos</label>
-              <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-molhos"/> 2x </span>
+              <!-- <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-molhos"/> 2x </span> -->
             </div>
             <div class="check-left">
               <div class="checkbox" id="molhos">
@@ -131,7 +131,7 @@
           <div class="row col-md-6 col-sm-4 col-lg-4">
             <div class="row">
               <label class="col-md-5 control-label lang" key="temperos">Temperos</label>
-              <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-temperos"/> 2x </span>
+              <!-- <span><input class="col-md-2 dobrar" type="checkbox" name="dobrar" value="dobrar-temperos"/> 2x </span> -->
             </div>
             <div class="check-left">
               <div class="checkbox" id="temperos">
@@ -193,23 +193,22 @@
         <!-- Modal content-->
         <div class="modal-content">
           <div class="modal-header">
-            <h4 class="modal-title lang" key="ola">Olá </h4><b id="lb-nome"> "nome do cliente"</b>
+            <h4 class="modal-title lang" key="ola">Olá </h4> <h4><span id="lb-nome" class="label label-default"> </span></h4> 
           </div>
           <!-- <div class="modal-body"> -->
           <div class="col-md-12">
             <div class="col-md-6 modal-magin-top">
-
               <div class="row">
-                <h4 class="lang" key="valor">O valor do seu pedido é de </h4><h4 id="seu-pedido"> R$ 30</h4>
-              </div>
-              <br>
+                <h4><span class="lang" key="valor">O valor do seu pedido é de </span></h4>
+                <h3><span id="seu-pedido" class="label label-info"></span></h3>
+              </div><br>
               <div class="row">
                 <label class="lang" key="formaPagamento">Qual a forma de pagamento?</label>
                 <div class="form-group">
                   <div class="checkbox" id="molhos">
-                    <input type="radio" name="tipo-pagamento"><label class="radio-inline lang" key="credito">Crédito</label>
-                    <input type="radio" name="tipo-pagamento"><label class="radio-inline lang" key="debito">Débito</label>
-                    <input type="radio" name="tipo-pagamento"><label class="radio-inline lang" key="dinheiro">Dinheiro</label>
+                    <input type="radio" name="tipo-pagamento">&nbsp;&nbsp;<label class="radio-inline lang" key="credito">Crédito</label>&nbsp;&nbsp;
+                    <input type="radio" name="tipo-pagamento">&nbsp;&nbsp;<label class="radio-inline lang" key="debito">Débito</label>&nbsp;&nbsp;
+                    <input type="radio" name="tipo-pagamento">&nbsp;&nbsp;<label class="radio-inline lang" key="dinheiro">Dinheiro</label>&nbsp;&nbsp;
                   </div>
                 </div>
               </div>
@@ -218,18 +217,20 @@
                 <label class="lang" key="troco">Precisa de troco?</label>
                 <div class="form-group">
                   <div class="checkbox" id="molhos">
-                    <input type="radio" name="troco" value="S"><label class="radio-inline lang" key="sim">Sim</label>
-                    <input type="radio" name="troco" value="N"><label class="radio-inline lang" key="nao">Não</label>
+                    <input type="radio" name="troco" value="S">&nbsp;&nbsp;<label class="radio-inline lang" key="sim">Sim</label>&nbsp;&nbsp;
+                    <input type="radio" name="troco" value="N">&nbsp;&nbsp;<label class="radio-inline lang" key="nao">Não</label>&nbsp;&nbsp;
                   </div>
                 </div>
               </div>
-
             </div>
+
             <div class="col-md-6 modal-magin-top">
               <div class="row">
-                <h4 class="lang" key="seupedido">Seu pedido já está em andamento</h4>
-                <p class="lang" key="calculadora">Use nossa calculadora caso queira dividir o valor</p>
-              </div>
+                <h3><span class="lang label label-warning" key="seupedido">Seu pedido já está em andamento</span></h3>
+              </div><br>
+              <div class="row">
+                <h4 class="lang" key="calculadora">Use nossa calculadora caso queira dividir o valor</h4>
+              </div><br>
               <div class="row modal-inputs">
                 <label class="col-md-6 lang" key="valorPedido">Valor do pedido</label>
                 <div class="form-group col-md-6">
@@ -272,4 +273,16 @@
   </div>
 
 </body>
+<div class="bg_load"></div>
+<div class="wrapper">
+  <div class="inner">
+    <span>L</span>
+    <span>o</span>
+    <span>a</span>
+    <span>d</span>
+    <span>i</span>
+    <span>n</span>
+    <span>g</span>
+  </div>
+</div>
 </html>

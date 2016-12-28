@@ -17,6 +17,8 @@ $( document ).ready(function() {
   $('.obrigatorio').hide();
   $('#um-lanche').hide();
   $('#lb-valor-porcento').hide();
+  $(".bg_load").fadeOut("slow");
+  $(".wrapper").fadeOut("slow");
 
   $.ajax({
     type: "GET",
@@ -255,7 +257,7 @@ $( document ).ready(function() {
       for (var i = 0; i < this.value; i++) {
         $('#lista-pessoas').append('<div class="row col-md-12">\
         <div class="form-group col-md-4">\
-        <label class="modal-label lang" key="pessoa">Pessoa</label><br><p>'+count+'</p>\
+        <label class="modal-label lang" key="pessoa">Pessoa</label><p>'+count+'</p>\
         </div>\
         <div class="form-group col-md-4">\
         <input type="text" class="form-control" onkeyup="somenteNumeros(this);" data-count="'+count+'" placeholder="R$ 0,00" id="valor-pedido_'+count+'" name="valor-pedido">\

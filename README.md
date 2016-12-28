@@ -1,6 +1,6 @@
 # desafio-lucenelanches
 
-Projeto construído de acordo com as especificações da "Lucene Lanches".
+Projeto construído de acordo com as especificações da "Lucene Lanches", User Story – Solicitação de lanches.
 As seções a seguir sumarizam as tecnologias utilizadas e decisões tomadas para a implementação.
 
 ## Front-End
