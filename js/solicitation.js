@@ -15,6 +15,7 @@ $( document ).ready(function() {
   var auxLancheText;
   var auxDobrar = 0;
 
+  $('.modal').removeClass('fade');
   $('.obrigatorio').hide();
   $('#um-lanche').hide();
   $('#lb-valor-porcento').hide();
@@ -269,7 +270,7 @@ $( document ).ready(function() {
       $.post( "https://private-anon-e1892d7b1a-lucenelanchesfrontend.apiary-mock.com/lanches", {name:'teste'}, function( data ) {
         console.log(data);
       });
-      $('#lb-nome').text($('#nome').val())
+      $('#lb-nome').text($('#nome').val());
       $('#seu-pedido').text(formataValor(valorTotal));
       $('#valor-pedido').val(formataValor(valorTotal));
       $('.modal-title').find('span').text(nome);
